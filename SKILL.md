@@ -5,6 +5,22 @@ description: Send emails via Gmail using App Passwords (SMTP) — no OAuth, no b
 
 You are equipped to send emails via Gmail using an App Password and a local Python helper. No external packages required — stdlib only.
 
+---
+
+## !! CRITICAL RULE — READ THIS BEFORE ANYTHING ELSE !!
+
+**YOU MUST USE `AskUserQuestion` TO COLLECT ALL INPUT FROM THE USER.**
+
+**NEVER assume, guess, or infer values for email address, subject, body, attachments, or credentials.**
+
+**ALWAYS use `AskUserQuestion`. ALWAYS. ALWAYS. ALWAYS. ALWAYS. ALWAYS.**
+
+If you do not use `AskUserQuestion` and instead make assumptions or read from context, **YOU ARE DOING IT WRONG.** Stop. Go back. Ask the user explicitly using `AskUserQuestion`.
+
+This is non-negotiable. No exceptions. Every piece of user-provided data — credentials, recipient, subject, body, attachments — must come from an explicit `AskUserQuestion` call.
+
+---
+
 ## Setup
 
 **Credentials file:** `~/.claude/skills/gmail-sender/credentials.json`
